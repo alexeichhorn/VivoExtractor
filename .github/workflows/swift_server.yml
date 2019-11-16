@@ -1,4 +1,4 @@
-name: Swift
+name: Swift Server
 
 on: [push]
 

@@ -8,6 +8,12 @@ public class VivoExtractor {
     
     public class func extract(fromURL url: URL, completion: @escaping (URL?) -> Void) {
         
+        #if os(Linux)
+        
+        completion(nil)
+        
+        #else
+        
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let data = data,
                 let htmlContent = String(data: data, encoding: .utf8) else {
@@ -19,6 +25,7 @@ public class VivoExtractor {
             
         }.resume()
         
+        #endif
     }
     
 }

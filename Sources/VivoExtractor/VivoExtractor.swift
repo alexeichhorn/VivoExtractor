@@ -34,7 +34,10 @@ public class VivoExtractor {
         
         #if os(Linux)
         
-        completion(nil)
+        DispatchQueue.global(qos: .background).async {
+            let htmlContent = String(contentsOf: url, encoding: .utf8)
+            completion(extract(fromEncodedSource: htmlContent))
+        }
         
         #else
         

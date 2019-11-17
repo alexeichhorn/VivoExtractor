@@ -17,7 +17,7 @@ public class VivoExtractor {
     
     public class func extract(fromHTML html: String) -> URL? {
         
-        let pattern = #"InitializeStream\s*\(\{[\s\S]*(source\:[\s]\')(?P<url>[\s\S\:]+?)(\',\s*)"#
+        let pattern = #"InitializeStream\s*\(\{[\s\S]*(source\:[\s]\')(?<url>[\s\S\:]+?)(\',\s*)"#
         let regex = try? NSRegularExpression(pattern: pattern, options: [])
         
         guard let match = regex?.firstMatch(in: html, options: [], range: NSRange(location: 0, length: html.count)) else { return nil }

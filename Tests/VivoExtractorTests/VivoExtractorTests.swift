@@ -43,7 +43,7 @@ final class VivoExtractorTests: XCTestCase {
 
     static var allTests = [
         ("testBunnyVideo", testBunnyVideo),
-        ("testSourceDecoder", testSourceDecoder)
+        ("testSourceDecoder", testSourceDecoder),
         ("testEmptyHTML", testEmptyHTML),
         ("testUnavailableURL", testUnavailableURL),
     ]

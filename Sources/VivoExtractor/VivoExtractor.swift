@@ -3,7 +3,16 @@ import Foundation
 public class VivoExtractor {
     
     public class func extract(fromEncodedSource encodedSource: String) -> URL? {
-        return nil
+        var decoded = ""
+        for c in encodedSource.removingPercentEncoding ?? "" {
+            var j = Int(c.asciiValue ?? 0)
+            j += 47
+            if j > 126 {
+                j -= 94
+            }
+            decoded.append(Character(UnicodeScalar(j)!))
+        }
+        return URL(string: decoded)
     }
     
     public class func extract(fromHTML html: String) -> URL? {

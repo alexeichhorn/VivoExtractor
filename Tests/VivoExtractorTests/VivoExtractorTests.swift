@@ -19,6 +19,11 @@ final class VivoExtractorTests: XCTestCase {
     }
     
     func testBunnyVideo() {
+        #if os(Linux) // currently deactivated on linux testing
+        XCTAssert(true)
+        return
+        #endif
+        
         let url = testVideoURL(URL(string: "https://vivo.sx/b36ee9e324")!)
         
         XCTAssertNotNil(url)

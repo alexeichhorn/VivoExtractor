@@ -7,7 +7,7 @@ Written in 100% Swift. Works for iOS, macOS, watchOS, tvOS and Linux.
 
 ## Usage
 Get video path from vivo page url:
-```
+```swift
 let url = URL(string: "https://vivo.sx/b36ee9e324")!
 VivoExtractor.extract(fromURL: url) { videoURL in
     // do stuff with retrieved videoURL

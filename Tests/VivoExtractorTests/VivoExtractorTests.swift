@@ -24,7 +24,7 @@ final class VivoExtractorTests: XCTestCase {
         return
         #endif
         
-        let url = testVideoURL(URL(string: "https://vivo.sx/a09392135c")!)
+        let url = testVideoURL(URL(string: "https://vivo.sx/7628a15d21")!)
         
         XCTAssertNotNil(url)
     }
